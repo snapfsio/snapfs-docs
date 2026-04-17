@@ -6,9 +6,9 @@ A SnapFS scanner agent is responsible for walking a filesystem root and publishi
 
 Make sure you know:
 
-- the gateway URL
-- the root path you want this agent to scan
-- any credentials or API keys required by your deployment
+- the gateway URL (e.g. https://example.snapfs.com)
+- the root path you want this agent to scan (e.g. `/mnt/data`)
+- API keys (see [Managing Access](managing-access.md))
 
 ## Install The Package
 
