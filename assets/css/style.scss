@@ -304,44 +304,36 @@ pre code {
 
 .chart-area {
   fill: url(#snapfs-grid);
-  animation: chartPulse 6s ease-in-out infinite;
 }
 
 .chart-line {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation-fill-mode: forwards;
 }
 
 .chart-line-a {
   stroke: url(#snapfs-line-a);
   stroke-width: 3;
-  animation: chartRevealA 4.8s ease-out infinite;
+  animation: chartRevealA 1.8s ease-out forwards;
 }
 
 .chart-line-b {
   stroke: url(#snapfs-line-b);
   stroke-width: 2;
   opacity: 0.8;
-  animation: chartRevealB 4.8s ease-out infinite 0.35s;
-}
-
-.chart-dot {
-  fill: #7dd3fc;
-  filter: drop-shadow(0 0 10px rgba(125, 211, 252, 0.55));
-  animation: chartDot 2.8s ease-in-out infinite;
+  animation: chartRevealB 1.8s ease-out 0.18s forwards;
 }
 
 @keyframes chartRevealA {
-  0%,
-  18% {
-    stroke-dashoffset: 320;
+  0% {
+    stroke-dashoffset: 100;
     opacity: 0.35;
   }
 
-  38%,
   100% {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -349,48 +341,20 @@ pre code {
 }
 
 @keyframes chartRevealB {
-  0%,
-  22% {
-    stroke-dashoffset: 320;
+  0% {
+    stroke-dashoffset: 100;
     opacity: 0.2;
   }
 
-  44%,
   100% {
     stroke-dashoffset: 0;
     opacity: 0.8;
   }
 }
 
-@keyframes chartPulse {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 0.85;
-  }
-}
-
-@keyframes chartDot {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: scale(1.18);
-    opacity: 1;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .chart-area,
   .chart-line-a,
-  .chart-line-b,
-  .chart-dot {
+  .chart-line-b {
     animation: none;
   }
 
