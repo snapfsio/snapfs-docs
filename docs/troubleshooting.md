@@ -6,7 +6,7 @@ This page covers common early beta issues.
 
 Check:
 
-- gateway URL
+- SnapFS gateway URL
 - agent credentials
 - network reachability between agent and gateway
 - container or service logs

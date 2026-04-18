@@ -5,6 +5,7 @@ SnapFS helps you scan storage roots, track file lifecycle changes, and explore w
 These docs are written for early beta users and focus on the fastest path to getting value:
 
 - [Getting Started](docs/getting-started.md)
+- [Beta Quickstart](docs/beta-quickstart.md)
 - [Installing an Agent](docs/installing-an-agent.md)
 - [Creating Schedules](docs/creating-schedules.md)
 - [Running Your First Scan](docs/running-your-first-scan.md)

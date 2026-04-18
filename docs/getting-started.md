@@ -42,4 +42,4 @@ The `Overview` page gives a quick read on recent activity, growth, and top paths
 
 ## Next Step
 
-Continue with [Installing an Agent](installing-an-agent.md).
+Continue with the [Beta Quickstart](beta-quickstart.md).
