@@ -81,20 +81,25 @@ pre {
 }
 
 pre code {
+  display: block;
   padding: 0;
   background: transparent;
+  line-height: 1.55;
 }
 
 pre.has-copy-button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
+  align-items: center;
   gap: 0.85rem;
   padding-top: 0.95rem;
 }
 
 .copy-button {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   width: 34px;
   height: 34px;
