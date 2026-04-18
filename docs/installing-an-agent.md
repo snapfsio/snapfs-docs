@@ -1,3 +1,8 @@
+---
+title: Installing an Agent
+lede: Install a SnapFS scanner agent, point it at the right root, and confirm it appears in the console.
+---
+
 # Installing an Agent
 
 A SnapFS scanner agent is responsible for walking a filesystem root and publishing scan events.
@@ -23,7 +28,13 @@ For most Linux hosts, the quick start is:
 pip install -U snapfs
 ```
 
-If you are installing the long-running agent service, follow the `install.sh` / systemd instructions in the main repo after installing the package.
+If you are installing the long-running agent service, follow the `install.sh` / systemd instructions in the main repo after installing the package:
+
+```bash
+curl -sL https://raw.githubusercontent.com/snapfsio/snapfs/refs/tags/0.4.1/systemd/install.sh -o install.sh
+chmod +x install.sh
+./install.sh
+```
 
 ## Agent Root Paths
 

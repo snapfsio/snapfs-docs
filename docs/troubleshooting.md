@@ -1,3 +1,8 @@
+---
+title: Troubleshooting
+lede: Work through common early beta issues with agents, scans, and unexpected results.
+---
+
 # Troubleshooting
 
 This page covers common early beta issues.

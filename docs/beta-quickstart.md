@@ -1,3 +1,8 @@
+---
+title: Beta Quickstart
+lede: The fastest path for beta testers to connect an agent, run a small scan, and validate the results.
+---
+
 # Beta Quickstart
 
 This page is for early beta testers who want the fastest path to a working first scan.

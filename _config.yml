@@ -1,0 +1,31 @@
+title: SnapFS Docs
+description: Early beta documentation for SnapFS
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+navigation:
+  - title: Getting Started
+    url: /docs/getting-started/
+  - title: Beta Quickstart
+    url: /docs/beta-quickstart/
+  - title: Installing an Agent
+    url: /docs/installing-an-agent/
+  - title: Creating Schedules
+    url: /docs/creating-schedules/
+  - title: Running Your First Scan
+    url: /docs/running-your-first-scan/
+  - title: Exploring Results
+    url: /docs/exploring-results/
+  - title: Activity, Jobs, and History
+    url: /docs/activity-jobs-and-history/
+  - title: Managing Access
+    url: /docs/managing-access/
+  - title: Troubleshooting
+    url: /docs/troubleshooting/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: docs

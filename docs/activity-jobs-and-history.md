@@ -1,3 +1,8 @@
+---
+title: Activity, Jobs, and History
+lede: Use SnapFS history views to understand what changed, which scans ran, and how the results compare.
+---
+
 # Activity, Jobs, and History
 
 These pages help you answer different questions:

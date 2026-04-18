@@ -1,3 +1,8 @@
+---
+title: Exploring Results
+lede: Move from high-level summaries to path-level investigation in the SnapFS console.
+---
+
 # Exploring Results
 
 Use the console to move from high-level summaries to specific paths.

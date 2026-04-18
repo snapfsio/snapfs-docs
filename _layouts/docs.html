@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-wrap">
+          <a class="brand" href="{{ '/' | relative_url }}">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" role="img" focusable="false">
+                <path d="M10 12.5 20 7l10 5.5-10 5.5-10-5.5Z" />
+                <path d="M10 20 20 14.5 30 20l-10 5.5L10 20Z" />
+                <path d="M10 27.5 20 22l10 5.5L20 33l-10-5.5Z" />
+              </svg>
+            </span>
+            <span>
+              <strong>SnapFS</strong>
+              <span class="brand-subtitle">docs</span>
+            </span>
+          </a>
+        </div>
+        <nav class="header-nav" aria-label="Primary">
+          <a href="{{ '/docs/getting-started/' | relative_url }}">Docs</a>
+          <a href="https://github.com/snapfsio/snapfs">GitHub</a>
+        </nav>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar" aria-label="Documentation navigation">
+          <div class="sidebar-card">
+            <p class="eyebrow">Docs</p>
+            <p class="sidebar-copy">Early beta setup and operator guidance for SnapFS.</p>
+          </div>
+          <nav class="sidebar-nav">
+            {% for item in site.navigation %}
+              {% assign item_url = item.url | relative_url %}
+              <a href="{{ item_url }}" {% if page.url == item_url %}class="is-active"{% endif %}>{{ item.title }}</a>
+            {% endfor %}
+          </nav>
+        </aside>
+
+        <section class="content-wrap">
+          <div class="hero-card">
+            <p class="eyebrow">SnapFS Documentation</p>
+            <h1>{{ page.title | default: site.title }}</h1>
+            {% if page.lede %}
+              <p class="lede">{{ page.lede }}</p>
+            {% else %}
+              <p class="lede">Use these docs to get a scanner online, validate a safe first scan, and expand with confidence.</p>
+            {% endif %}
+          </div>
+
+          <article class="doc-content">
+            {{ content }}
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

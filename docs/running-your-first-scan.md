@@ -1,3 +1,8 @@
+---
+title: Running Your First Scan
+lede: Watch the initial scan closely, confirm the scope, and compare outcomes before scaling up.
+---
+
 # Running Your First Scan
 
 Once an agent is connected and a schedule exists, trigger your first scan.

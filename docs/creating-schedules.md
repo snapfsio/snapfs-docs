@@ -1,3 +1,8 @@
+---
+title: Creating Schedules
+lede: Start with a conservative schedule, validate scan behavior, and then expand confidently.
+---
+
 # Creating Schedules
 
 Schedules let SnapFS run scans on a regular cadence.

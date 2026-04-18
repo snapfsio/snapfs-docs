@@ -1,3 +1,8 @@
+---
+title: Getting Started
+lede: Meet the three SnapFS components and the safest path for a healthy first deployment.
+---
+
 # Getting Started
 
 SnapFS has three main pieces:

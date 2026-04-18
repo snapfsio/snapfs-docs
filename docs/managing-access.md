@@ -1,3 +1,8 @@
+---
+title: Managing Access
+lede: Manage user sign-in, roles, and API keys while keeping early beta access simple.
+---
+
 # Managing Access
 
 Use the access controls in SnapFS to manage who can sign in and how automated clients authenticate.
