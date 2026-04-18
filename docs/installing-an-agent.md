@@ -25,15 +25,15 @@ The canonical install instructions live in the public `snapfsio/snapfs` reposito
 For most Linux hosts, the quick start is:
 
 ```bash
-pip install -U snapfs
+python3 -m pip install -U snapfs
 ```
 
 If you are installing the long-running agent service, follow the `install.sh` / systemd instructions in the main repo after installing the package:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/snapfsio/snapfs/refs/tags/0.4.1/systemd/install.sh -o install.sh
-chmod +x install.sh
-./install.sh
+git clone --depth 1 https://github.com/snapfsio/snapfs
+cd snapfs
+./systemd/install.sh
 ```
 
 ## Agent Root Paths
