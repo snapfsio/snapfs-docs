@@ -17,10 +17,9 @@ Make sure you know:
 
 ## Install The Package
 
-The canonical install instructions live in the public `snapfsio/snapfs` repository. This docs repo is meant to stay lightweight and user-focused, so for package installation and service setup we point back to the main project repo:
+The canonical install instructions live in the public `snapfsio/snapfs` repository:
 
-- Repository: `https://github.com/snapfsio/snapfs`
-- Systemd install guide: `https://github.com/snapfsio/snapfs/blob/master/README.md#install-the-systemd-agent`
+[`https://github.com/snapfsio/snapfs`](https://github.com/snapfsio/snapfs)
 
 For most Linux hosts, the quick start is:
 
