@@ -16,8 +16,8 @@
   --accent-soft: rgba(56, 189, 248, 0.16);
   --success: #6ee7b7;
   --shadow: 0 28px 80px rgba(2, 8, 23, 0.48);
-  --radius-lg: 24px;
-  --radius-md: 18px;
+  --radius-lg: 15px;
+  --radius-md: 15px;
   --radius-sm: 12px;
   --content-width: 840px;
 }
@@ -98,7 +98,7 @@ pre code {
   margin-bottom: 24px;
   padding: 18px 22px;
   border: 1px solid var(--panel-border);
-  border-radius: 999px;
+  border-radius: 15px;
   background: rgba(8, 15, 28, 0.72);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
@@ -131,7 +131,7 @@ pre code {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 14px;
+  border-radius: 15px;
   background: linear-gradient(180deg, rgba(56, 189, 248, 0.22), rgba(125, 211, 252, 0.08));
   color: var(--accent);
 }
@@ -183,14 +183,8 @@ pre code {
 
 .sidebar-card {
   margin-bottom: 16px;
-  padding: 18px;
+  padding: 16px;
   border-radius: var(--radius-lg);
-}
-
-.sidebar-copy {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  line-height: 1.6;
 }
 
 .eyebrow {
@@ -204,8 +198,8 @@ pre code {
 
 .sidebar-nav {
   display: grid;
-  gap: 0.5rem;
-  padding: 10px;
+  gap: 0.3rem;
+  padding: 8px;
   border: 1px solid var(--panel-border);
   border-radius: var(--radius-lg);
   background: rgba(12, 20, 34, 0.82);
@@ -214,10 +208,11 @@ pre code {
 
 .sidebar-nav a {
   display: block;
-  padding: 0.85rem 0.95rem;
-  border-radius: 14px;
+  padding: 0.72rem 0.82rem;
+  border-radius: 12px;
   color: var(--muted);
-  line-height: 1.35;
+  font-size: 0.98rem;
+  line-height: 1.28;
 }
 
 .sidebar-nav a:hover,
@@ -233,7 +228,7 @@ pre code {
 .hero-card {
   margin-bottom: 20px;
   padding: 28px 32px;
-  border-radius: 30px;
+  border-radius: 15px;
   background:
     radial-gradient(circle at top right, rgba(125, 211, 252, 0.12), transparent 30%),
     linear-gradient(180deg, rgba(19, 30, 50, 0.98), rgba(13, 22, 37, 0.96));
@@ -242,7 +237,7 @@ pre code {
 .hero-card h1 {
   margin: 0.4rem 0 0.75rem;
   color: var(--heading);
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.8rem, 2vw, 2.6rem);
   line-height: 1.05;
 }
 
@@ -250,14 +245,56 @@ pre code {
   max-width: 64ch;
   margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
 .doc-content {
   max-width: var(--content-width);
   padding: 34px 36px;
-  border-radius: 30px;
+  border-radius: 15px;
+}
+
+.sidebar-graphic {
+  margin-top: 0.9rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(10, 17, 30, 0.86), rgba(12, 19, 33, 0.96));
+  overflow: hidden;
+}
+
+.sidebar-graphic svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-grid line {
+  stroke: rgba(159, 176, 205, 0.18);
+  stroke-dasharray: 4 8;
+}
+
+.chart-area {
+  fill: url(#snapfs-grid);
+}
+
+.chart-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-line-a {
+  stroke: url(#snapfs-line-a);
+  stroke-width: 3;
+}
+
+.chart-line-b {
+  stroke: url(#snapfs-line-b);
+  stroke-width: 2;
+  opacity: 0.8;
 }
 
 .doc-content > :first-child {
@@ -376,6 +413,6 @@ pre code {
 
   .hero-card {
     padding: 24px 22px;
-    border-radius: 24px;
+    border-radius: 15px;
   }
 }
