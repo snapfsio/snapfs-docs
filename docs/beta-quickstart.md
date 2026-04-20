@@ -65,6 +65,8 @@ The easiest path is to pass your SnapFS API key directly on the command line:
   --gateway https://example.snapfs.com \
   --api-key YOUR_API_KEY</code></pre>
 
+    <p>Or set the gateway and API key as environment variables first:</p>
+
     <pre><code>export SNAPFS_GATEWAY=https://example.snapfs.com
 export SNAPFS_API_KEY=YOUR_API_KEY
 snapfs scan /path/to/small/test/root</code></pre>
@@ -74,6 +76,8 @@ snapfs scan /path/to/small/test/root</code></pre>
     <pre><code>snapfs scan C:\path\to\small\test\root `
   --gateway https://example.snapfs.com `
   --api-key YOUR_API_KEY</code></pre>
+
+    <p>Or set the gateway and API key as environment variables first:</p>
 
     <pre><code>$env:SNAPFS_GATEWAY = "https://example.snapfs.com"
 $env:SNAPFS_API_KEY = "YOUR_API_KEY"
