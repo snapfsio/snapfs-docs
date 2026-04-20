@@ -7,6 +7,12 @@ lede: Install a SnapFS scanner agent, point it at the right root, and confirm it
 
 A SnapFS scanner agent is responsible for walking a filesystem root and publishing scan events.
 
+## Platform Support
+
+Today, the supported agent setup path is Linux and macOS.
+
+Windows agent install guidance and install scripts are coming soon. If you are on Windows today, you can continue with one-off CLI scans, or you can wire up the agent manually if you are comfortable with a DIY setup.
+
 ## Before You Install
 
 Make sure you know:
@@ -21,19 +27,21 @@ The canonical install instructions live in the public `snapfsio/snapfs` reposito
 
 [`https://github.com/snapfsio/snapfs`](https://github.com/snapfsio/snapfs)
 
-For most Linux hosts, the quick start is:
+For Linux and macOS hosts, the package install is:
 
 ```bash
 python3 -m pip install -U snapfs
 ```
 
-If you are installing the long-running agent service, follow the `install.sh` / systemd instructions in the main repo after installing the package:
+If you are installing the long-running agent service on Linux, follow the `install.sh` / systemd instructions in the main repo after installing the package:
 
 ```bash
 git clone --depth 1 https://github.com/snapfsio/snapfs
 cd snapfs
 ./systemd/install.sh
 ```
+
+On macOS, you can still run the agent directly after installing the package, but the packaged Linux systemd setup does not apply.
 
 ## Agent Root Paths
 
