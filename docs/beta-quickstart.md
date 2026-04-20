@@ -61,35 +61,23 @@ The easiest path is to pass your SnapFS API key directly on the command line:
   </div>
 
   <div class="tab-panel" data-tab-panel>
-
-```bash
-snapfs scan /path/to/small/test/root \
+    <pre><code>snapfs scan /path/to/small/test/root \
   --gateway https://example.snapfs.com \
-  --api-key YOUR_API_KEY
-```
+  --api-key YOUR_API_KEY</code></pre>
 
-```bash
-export SNAPFS_GATEWAY=https://example.snapfs.com
+    <pre><code>export SNAPFS_GATEWAY=https://example.snapfs.com
 export SNAPFS_API_KEY=YOUR_API_KEY
-snapfs scan /path/to/small/test/root
-```
-
+snapfs scan /path/to/small/test/root</code></pre>
   </div>
 
   <div class="tab-panel" data-tab-panel>
-
-```powershell
-snapfs scan C:\path\to\small\test\root `
+    <pre><code>snapfs scan C:\path\to\small\test\root `
   --gateway https://example.snapfs.com `
-  --api-key YOUR_API_KEY
-```
+  --api-key YOUR_API_KEY</code></pre>
 
-```powershell
-$env:SNAPFS_GATEWAY = "https://example.snapfs.com"
+    <pre><code>$env:SNAPFS_GATEWAY = "https://example.snapfs.com"
 $env:SNAPFS_API_KEY = "YOUR_API_KEY"
-snapfs scan C:\path\to\small\test\root
-```
-
+snapfs scan C:\path\to\small\test\root</code></pre>
   </div>
 </div>
 
