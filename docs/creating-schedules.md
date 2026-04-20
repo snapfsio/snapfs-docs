@@ -7,6 +7,8 @@ lede: Start with a conservative schedule, validate scan behavior, and then expan
 
 Schedules let SnapFS run scans on a regular cadence.
 
+Recurring schedules require a connected scanner agent. If you are only running one-off CLI scans, you can skip this page for now and return to it later after [Installing an Agent](installing-an-agent.md).
+
 ## Start Small
 
 For beta, the safest approach is:
@@ -21,7 +23,7 @@ Useful starting points:
 
 - hourly for a small active folder
 - daily for a larger or quieter root
-- manual runs for initial validation
+- manual runs for initial validation before creating a schedule
 
 ## Existing Schedules
 
@@ -37,6 +39,8 @@ When creating a schedule, choose:
 - the target path to scan
 - the run cadence
 - whether the schedule is enabled
+
+Schedules must stay within the root path configured for the connected agent.
 
 ## Create A Schedule
 

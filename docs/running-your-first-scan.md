@@ -5,7 +5,7 @@ lede: Watch the initial scan closely, confirm the scope, and compare outcomes be
 
 # Running Your First Scan
 
-Once an agent is connected and a schedule exists, trigger your first scan.
+Your first scan may come from a one-off CLI run or from a connected agent. In either case, the goal is the same: start small, confirm the scope, and verify that the results look right before expanding.
 
 ## Where To Watch It
 
@@ -20,6 +20,8 @@ On the Job Details page you can review:
 - files and bytes processed
 - telemetry
 - scan issues and error summaries
+
+If you are using a long-running agent, you may trigger this first scan manually or let it run from a schedule. If you are using CLI-only scans, you can still use the same `Jobs` view to validate the result.
 
 ## What To Look For
 
@@ -45,6 +47,8 @@ Check:
 - the error log
 - the root and target path
 - whether permissions or coverage problems were reported
+
+If you are using a connected agent, also confirm that the agent root and configured path match what you intended to scan.
 
 ## Next Step
 
