@@ -1,4 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const tabGroups = document.querySelectorAll("[data-tabs]");
+
+  tabGroups.forEach((group, groupIndex) => {
+    const tabs = group.querySelectorAll("[data-tab]");
+    const panels = group.querySelectorAll("[data-tab-panel]");
+
+    if (!tabs.length || !panels.length) {
+      return;
+    }
+
+    const activateTab = (targetName) => {
+      tabs.forEach((tab, tabIndex) => {
+        const isActive = tab.dataset.tab === targetName;
+        const panel = panels[tabIndex];
+
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+
+        if (panel) {
+          panel.hidden = !isActive;
+        }
+      });
+    };
+
+    tabs.forEach((tab, tabIndex) => {
+      const panel = panels[tabIndex];
+      const tabId = `docs-tab-${groupIndex}-${tabIndex}`;
+      const panelId = `docs-panel-${groupIndex}-${tabIndex}`;
+
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("id", tabId);
+      tab.setAttribute("aria-controls", panelId);
+
+      if (panel) {
+        panel.setAttribute("role", "tabpanel");
+        panel.setAttribute("id", panelId);
+        panel.setAttribute("aria-labelledby", tabId);
+      }
+
+      tab.addEventListener("click", () => activateTab(tab.dataset.tab));
+    });
+
+    const defaultTab = group.getAttribute("data-default-tab") || tabs[0].dataset.tab;
+    activateTab(defaultTab);
+  });
+
   const codeBlocks = document.querySelectorAll(".doc-content pre");
   const copyIcon = `
     <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">

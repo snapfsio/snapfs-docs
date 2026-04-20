@@ -1,6 +1,6 @@
 ---
 title: Beta Quickstart
-lede: The fastest path for beta testers to connect an agent, run a small scan, and validate the results.
+lede: The fastest path for beta testers to run a small scan, validate the results, and expand carefully.
 ---
 
 # Beta Quickstart
@@ -17,7 +17,7 @@ Before you begin, the SnapFS team will provide:
 - a username and password for the console
 
 You may receive an API key as well, otherwise you can create one in the console
-(see [Managing Access](docs/managing-access.md)).
+(see [Managing Access](managing-access.md)).
 
 ## What To Expect
 
@@ -32,7 +32,7 @@ Avoid starting with a very large namespace on the first day.
 
 ## Fast Path
 
-If you already have a Linux host picked out for the scanner agent, this is the shortest path:
+If you plan to install a long-running agent on Linux, this is the shortest path:
 
 ```bash
 python3 -m pip install -U snapfs
@@ -46,7 +46,54 @@ Then:
 4. run one initial scan
 5. review the results in the console before increasing scope
 
-If you need the full package or service install flow, continue to [Installing an Agent](installing-an-agent.md).
+If you want the full package or service install flow for a long-running agent, continue to [Installing an Agent](installing-an-agent.md).
+
+## Quick CLI Scan
+
+If you only want to run CLI scans for now, or if you want to validate connectivity before setting up a long-running agent, you can run a one-off scan directly from the CLI.
+
+The easiest path is to pass your SnapFS API key directly on the command line:
+
+<div class="tab-group" data-tabs data-default-tab="bash">
+  <div class="tab-list" role="tablist" aria-label="CLI quick scan examples">
+    <button class="tab-button" type="button" data-tab="bash">bash</button>
+    <button class="tab-button" type="button" data-tab="powershell">PowerShell</button>
+  </div>
+
+  <div class="tab-panel" data-tab-panel>
+
+```bash
+snapfs scan /path/to/small/test/root \
+  --gateway https://example.snapfs.com \
+  --api-key YOUR_API_KEY
+```
+
+```bash
+export SNAPFS_GATEWAY=https://example.snapfs.com
+export SNAPFS_API_KEY=YOUR_API_KEY
+snapfs scan /path/to/small/test/root
+```
+
+  </div>
+
+  <div class="tab-panel" data-tab-panel>
+
+```powershell
+snapfs scan C:\path\to\small\test\root `
+  --gateway https://example.snapfs.com `
+  --api-key YOUR_API_KEY
+```
+
+```powershell
+$env:SNAPFS_GATEWAY = "https://example.snapfs.com"
+$env:SNAPFS_API_KEY = "YOUR_API_KEY"
+snapfs scan C:\path\to\small\test\root
+```
+
+  </div>
+</div>
+
+For a first validation run, use a small, familiar path and confirm the results in the console before expanding scope. If you later want recurring scans on Linux, you can set up a long-running agent.
 
 ## Recommended First Targets
 
@@ -62,10 +109,11 @@ Avoid using a very large mount, namespace, or broad storage root for the first v
 
 After the first scan completes, use the console to confirm:
 
-- the agent appears under `Agents`
 - the scan appears under `Jobs`
 - the scanned path matches your intended target
 - the results in `Overview`, `Explore`, and `Activity` look reasonable
+
+If you set up a long-running agent, also confirm that it appears under `Agents`.
 
 If anything looks off, reduce scope and rerun on a smaller target before expanding.
 

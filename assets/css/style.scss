@@ -135,6 +135,45 @@ pre.has-copy-button {
   stroke-linejoin: round;
 }
 
+.tab-group {
+  margin: 1.2rem 0 1.5rem;
+}
+
+.tab-list {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+  padding: 0.28rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  background: rgba(12, 20, 34, 0.82);
+}
+
+.tab-button {
+  padding: 0.45rem 0.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.tab-button:hover {
+  color: var(--heading);
+}
+
+.tab-button.is-active {
+  background: rgba(125, 211, 252, 0.12);
+  color: var(--heading);
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
 .site-shell {
   width: min(1400px, calc(100% - 32px));
   margin: 0 auto;
