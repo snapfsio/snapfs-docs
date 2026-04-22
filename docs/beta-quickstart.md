@@ -57,6 +57,9 @@ Then:
 
 If you want the full package or service install flow for a long-running agent, continue to [Installing an Agent](installing-an-agent.md).
 
+If you want to measure host throughput and compare `sha1` against `xxh64`
+before tuning an agent, see [Benchmarking SnapFS](benchmarking.md).
+
 ## Quick CLI Scan
 
 If you only want to run CLI scans for now, or if you want to validate connectivity before setting up a long-running agent, you can run a one-off scan directly from the CLI.

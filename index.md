@@ -10,6 +10,7 @@ These docs are written for early beta users and focus on the fastest path to get
 - [Getting Started]({{ '/docs/getting-started/' | relative_url }})
 - [Beta Quickstart]({{ '/docs/beta-quickstart/' | relative_url }})
 - [Installing an Agent]({{ '/docs/installing-an-agent/' | relative_url }})
+- [Benchmarking SnapFS]({{ '/docs/benchmarking/' | relative_url }})
 - [Creating Schedules]({{ '/docs/creating-schedules/' | relative_url }})
 - [Running Your First Scan]({{ '/docs/running-your-first-scan/' | relative_url }})
 - [Exploring Results]({{ '/docs/exploring-results/' | relative_url }})
