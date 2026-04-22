@@ -1,6 +1,7 @@
 ---
 title: Benchmarking SnapFS
 lede: Run lightweight local benchmarks, compare hash algorithms, and interpret the results before tuning scanner defaults.
+doc_class: benchmark-doc
 ---
 
 # Benchmarking SnapFS

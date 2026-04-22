@@ -101,7 +101,7 @@
             {% endif %}
           </div>
 
-          <article class="doc-content">
+          <article class="doc-content{% if page.doc_class %} {{ page.doc_class }}{% endif %}">
             {{ content }}
           </article>
         </section>
