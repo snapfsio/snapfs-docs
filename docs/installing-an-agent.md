@@ -33,6 +33,17 @@ For Linux and macOS hosts, the package install is:
 python3 -m pip install -U snapfs
 ```
 
+If agent scan performance matters on that host, install the optional `xxhash`
+support as well:
+
+```bash
+python3 -m pip install -U 'snapfs[xxhash]'
+```
+
+That enables the faster `xxh64` hash algorithm. It is often a good fit for
+performance-sensitive scanner hosts, especially when scanning many small files
+or repeating warm-cache scans.
+
 If you are installing the long-running agent service on Linux, follow the `install.sh` / systemd instructions in the main repo after installing the package:
 
 ```bash
@@ -40,6 +51,10 @@ git clone --depth 1 https://github.com/snapfsio/snapfs
 cd snapfs
 ./systemd/install.sh
 ```
+
+During systemd setup, if you installed `xxhash`, consider setting the agent hash
+algorithm to `xxh64`. You can also re-run the installer later with the same
+scanner name to update the hash algorithm or worker count on an existing agent.
 
 On macOS, you can still run the agent directly after installing the package, but the packaged Linux systemd setup does not apply.
 

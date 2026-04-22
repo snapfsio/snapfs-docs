@@ -38,6 +38,15 @@ If you plan to install a long-running agent on Linux, this is the shortest path:
 python3 -m pip install -U snapfs
 ```
 
+If you expect scan throughput to matter on that host, prefer:
+
+```bash
+python3 -m pip install -U 'snapfs[xxhash]'
+```
+
+That enables the optional `xxh64` hash algorithm, which is often noticeably
+faster on many-small-file or CPU-limited scan workloads.
+
 Then:
 
 1. open the provided SnapFS URL and sign in with the provided username and password
