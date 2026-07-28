@@ -35,17 +35,12 @@ Avoid starting with a very large namespace on the first day.
 If you plan to install a long-running agent on Linux, this is the shortest path:
 
 ```bash
-python3 -m pip install -U snapfs
+curl -fsSL https://raw.githubusercontent.com/snapfsio/snapfs/master/install.sh | bash
 ```
 
-If you expect scan throughput to matter on that host, prefer:
-
-```bash
-python3 -m pip install -U 'snapfs[xxhash]'
-```
-
-That enables the optional `xxh64` hash algorithm, which is often noticeably
-faster on many-small-file or CPU-limited scan workloads.
+That bootstrap flow verifies `python3`, prepares the managed SnapFS runtime,
+includes `xxhash` support by default, and then launches the Linux agent
+installer.
 
 Then:
 
@@ -63,6 +58,9 @@ before tuning an agent, see [Benchmarking SnapFS](benchmarking.md).
 ## Quick CLI Scan
 
 If you only want to run CLI scans for now, or if you want to validate connectivity before setting up a long-running agent, you can run a one-off scan directly from the CLI.
+
+If you prefer manual package install options instead of the Linux bootstrap
+flow, see the advanced guidance on [Installing an Agent](installing-an-agent.md).
 
 The easiest path is to pass your SnapFS API key directly on the command line:
 

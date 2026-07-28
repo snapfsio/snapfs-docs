@@ -21,20 +21,28 @@ The goal is not to produce one universal score. The goal is to compare:
 Benchmarking is especially useful when:
 
 - scan performance matters for a production agent host
-- you are deciding whether to install `xxhash` and use `xxh64`
+- you want to compare `xxh64` against the SHA-based defaults
 - you want to compare worker counts on a real dataset
 - your storage path may be the bottleneck and you want to confirm that
 
 ## Install Benchmark Support
 
-At minimum, install SnapFS:
+If you are benchmarking on Linux and plan to run a long-lived agent, the normal
+bootstrap installer already includes `xxhash` support by default:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/snapfsio/snapfs/master/install.sh | bash
+```
+
+If you only want the package and CLI tools, at minimum install SnapFS:
 
 ```bash
 python3 -m pip install -U snapfs
 ```
 
-If performance matters on that host, prefer installing with `xxhash` support so
-you can benchmark `xxh64` as well:
+If you are managing the Python environment yourself and performance matters on
+that host, prefer installing with `xxhash` support so you can benchmark
+`xxh64` as well:
 
 ```bash
 python3 -m pip install -U 'snapfs[xxhash]'
