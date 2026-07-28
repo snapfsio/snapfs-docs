@@ -37,12 +37,8 @@ curl -fsSL https://raw.githubusercontent.com/snapfsio/snapfs/master/install.sh |
 
 That bootstrap flow verifies `python3`, prepares the managed SnapFS runtime,
 and then launches the Linux `systemd` installer for scanner-specific
-configuration.
-
-The bootstrap installer and lower-level Linux install details live in the
-public `snapfsio/snapfs` repository:
-
-[`https://github.com/snapfsio/snapfs`](https://github.com/snapfsio/snapfs)
+configuration. The standard Linux bootstrap install includes `xxhash` support,
+so the faster `xxh64` hash algorithm is available during agent setup.
 
 If you prefer to review the installer locally first, the repo-based fallback is:
 
@@ -54,44 +50,16 @@ cd snapfs
 
 ## Advanced Install Options
 
-If you prefer to manage the Python environment yourself, the manual package
-install remains available:
+If you need manual package or service-install options, see the SnapFS
+client docs:
 
-```bash
-python3 -m pip install -U snapfs
-```
-
-If agent scan performance matters on that host, install the optional `xxhash`
-support as well:
-
-```bash
-python3 -m pip install -U 'snapfs[xxhash]'
-```
-
-That enables the faster `xxh64` hash algorithm. It is often a good fit for
-performance-sensitive scanner hosts, especially when scanning many small files
-or repeating warm-cache scans.
-
-If you are managing the Python environment and service wiring yourself, the
-manual Linux installer path remains available:
-
-```bash
-python3 -m pip install -U 'snapfs[xxhash]'
-git clone --depth 1 https://github.com/snapfsio/snapfs
-cd snapfs
-./systemd/install.sh
-```
+- [Install Guide](https://snapfsio.github.io/snapfs/docs/install/)
+- [Systemd Agent Management](https://snapfsio.github.io/snapfs/docs/systemd/)
 
 During `systemd` setup, if you installed `xxhash`, consider setting the agent
 hash algorithm to `xxh64`. You can also re-run the installer later with the
 same scanner name to update the hash algorithm or worker count on an existing
 agent.
-
-For fuller Linux install and service-management details, see the install and
-systemd docs in the SnapFS client repo:
-
-- [`docs/install.md`](https://github.com/snapfsio/snapfs/blob/master/docs/install.md)
-- [`docs/systemd.md`](https://github.com/snapfsio/snapfs/blob/master/docs/systemd.md)
 
 ## Agent Root Paths
 
